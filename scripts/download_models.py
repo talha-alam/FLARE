@@ -7,10 +7,10 @@ import hashlib
 from typing import Dict, Optional
 
 MODEL_URLS = {
-    'swinir': 'https://github.com/username/FLARE/releases/download/v1.0/swinir_spacenet.pth',
-    'unidiffuser': 'https://github.com/username/FLARE/releases/download/v1.0/unidiffuser_spacenet.pth',
-    'resnet50_fine': 'https://github.com/username/FLARE/releases/download/v1.0/resnet50_fine.pth',
-    'resnet50_macro': 'https://github.com/username/FLARE/releases/download/v1.0/resnet50_macro.pth'
+    'swinir': 'https://github.com/talha-alam/FLARE/releases/download/v1.0/swinir_spacenet.pth',
+    'unidiffuser': 'https://github.com/talha-alam/FLARE/releases/download/v1.0/unidiffuser_spacenet.pth',
+    'resnet50_fine': 'https://github.com/talha-alam/FLARE/releases/download/v1.0/resnet50_fine.pth',
+    'resnet50_macro': 'https://github.com/talha-alam/FLARE/releases/download/v1.0/resnet50_macro.pth'
 }
 
 MODEL_CHECKSUMS = {
