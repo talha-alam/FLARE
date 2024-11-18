@@ -68,7 +68,7 @@ wget https://github.com/username/FLARE/releases/download/v1.0/resnet50_macro.pth
 
 ```bash
 # Clone the repository
-git clone https://github.com/username/FLARE
+git clone https://github.com/talha-alam/FLARE
 cd FLARE
 
 # Create a conda environment
