@@ -1,8 +1,8 @@
 # FLARE: Diffusion-based Augmentation Method in Astronomical Imaging [BMVC'24]
 
 [![Paper](https://img.shields.io/badge/arXiv-2405.13267-b31b1b.svg)](https://arxiv.org/abs/2405.13267)
-[![Poster](https://img.shields.io/badge/Poster-PDF-orange.svg)](https://mbzuaiac-my.sharepoint.com/:b:/g/personal/mohammed_alam_mbzuai_ac_ae/EQ_RtFNYVhRKvSDt7UhKFwkBAvTlRSl327rk_BoCPWUKYQ?e=Zdf4h9)
 [![Dataset](https://img.shields.io/badge/Dataset-SpaceNet-blue.svg)](https://www.kaggle.com/datasets/razaimam45/spacenet-an-optimally-distributed-astronomy-data/)
+[![Poster](https://img.shields.io/badge/Poster-PDF-orange.svg)](https://mbzuaiac-my.sharepoint.com/:b:/g/personal/mohammed_alam_mbzuai_ac_ae/EQ_RtFNYVhRKvSDt7UhKFwkBAvTlRSl327rk_BoCPWUKYQ?e=Zdf4h9)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 Official implementation of ["FLARE up your data: Diffusion-based Augmentation Method in Astronomical Imaging"](https://arxiv.org/abs/2405.13267), accepted at **BMVC 2024** 🎉
@@ -118,22 +118,24 @@ python scripts/generate_samples.py --prompt "your text prompt" --num_samples 4
 
 ### Out-of-Domain Performance
 
-Our framework shows significant improvements in generalization across various downstream tasks:
+| Backbone | Method | GalaxyZoo | Space | Spiral | SpaceNet | Average |
+|:---------|:--------|:-----------:|:-------:|:--------:|:---------:|:--------:|
+| **ResNet-50** | Raw_LR | 33.91 | 41.67 | 83.10 | 60.68 | 54.84 |
+| | Raw_Aug_LR | **72.75** <br> _(+38.84)_ | 41.67 <br> _(±0.00)_ | 88.73 <br> _(+5.63)_ | 66.15 <br> _(+5.47)_ | 67.33 <br> _(+12.49)_ |
+| | **FLARE (Ours)** | 71.76 <br> _(-37.25)_ | **59.38** <br> _(+17.71)_ | **95.77** <br> _(+12.67)_ | **83.94** <br> _(+23.26)_ | **77.71** <br> _(+22.87)_ |
+| **GoogleNet** | Raw_LR | 53.88 | 40.62 | 84.51 | 59.55 | 59.64 |
+| | Raw_Aug_LR | **66.46** <br> _(+12.58)_ | 45.83 <br> _(+5.21)_ | 81.69 <br> _(-2.82)_ | 67.18 <br> _(+7.63)_ | 65.29 <br> _(+5.65)_ |
+| | **FLARE (Ours)** | 65.84 <br> _(-11.96)_ | **56.25** <br> _(+15.63)_ | **92.96** <br> _(+8.45)_ | **81.29** <br> _(+21.74)_ | **74.09** <br> _(+14.45)_ |
+| **DenseNet-121** | Raw_LR | 37.73 | 48.96 | 80.28 | 60.27 | 56.81 |
+| | Raw_Aug_LR | **70.16** <br> _(+32.43)_ | 48.96 <br> _(±0.00)_ | 87.32 <br> _(+7.04)_ | 67.39 <br> _(+7.12)_ | 68.46 <br> _(+11.65)_ |
+| | **FLARE (Ours)** | 65.84 <br> _(-28.11)_ | **59.38** <br> _(+10.42)_ | **94.37** <br> _(+14.09)_ | **83.79** <br> _(+23.52)_ | **75.85** <br> _(+22.04)_ |
+| **ViT-B/16** | Raw_LR | 67.20 | 45.83 | 90.14 | 61.92 | 66.27 |
+| | Raw_Aug_LR | **93.09** <br> _(+25.89)_ | 44.79 <br> _(-1.04)_ | 87.32 <br> _(-2.82)_ | 68.21 <br> _(+6.29)_ | 73.35 <br> _(+7.08)_ |
+| | **FLARE (Ours)** | 83.72 <br> _(-16.52)_ | **55.21** <br> _(+9.38)_ | **98.59** <br> _(+8.45)_ | **82.70** <br> _(+20.78)_ | **80.06** <br> _(+13.79)_ |
 
-| Pretrained Backbone | Method | GalaxyZoo | Space | Spiral | SpaceNet | Average |
-|:-------------------|:--------|:-----------|:-------|:--------|:---------|:---------|
-| ResNet-50 | Raw_LR | 33.91 | 41.67 | 83.10 | 60.68 | 54.84 |
-|           | Raw_Aug_LR | **72.75** (+38.84) | 41.67 (±0.00) | 88.73 (+5.63) | 66.15 (+5.47) | 67.33 (+12.49) |
-|           | **FLARE (Ours)** | 71.76 (-37.25) | **59.38** (+17.71) | **95.77** (+12.67) | **83.94** (+23.26) | **77.71** (+22.87) |
-| GoogleNet | Raw_LR | 53.88 | 40.62 | 84.51 | 59.55 | 59.64 |
-|           | Raw_Aug_LR | **66.46** (+12.58) | 45.83 (+5.21) | 81.69 (-2.82) | 67.18 (+7.63) | 65.29 (+5.65) |
-|           | **FLARE (Ours)** | 65.84 (-11.96) | **56.25** (+15.63) | **92.96** (+8.45) | **81.29** (+21.74) | **74.09** (+14.45) |
-| DenseNet-121 | Raw_LR | 37.73 | 48.96 | 80.28 | 60.27 | 56.81 |
-|              | Raw_Aug_LR | **70.16** (+32.43) | 48.96 (±0.00) | 87.32 (+7.04) | 67.39 (+7.12) | 68.46 (+11.65) |
-|              | **FLARE (Ours)** | 65.84 (-28.11) | **59.38** (+10.42) | **94.37** (+14.09) | **83.79** (+23.52) | **75.85** (+22.04) |
-| ViT-B/16 | Raw_LR | 67.20 | 45.83 | 90.14 | 61.92 | 66.27 |
-|          | Raw_Aug_LR | **93.09** (+25.89) | 44.79 (-1.04) | 87.32 (-2.82) | 68.21 (+6.29) | 73.35 (+7.08) |
-|          | **FLARE (Ours)** | 83.72 (-16.52) | **55.21** (+9.38) | **98.59** (+8.45) | **82.70** (+20.78) | **80.06** (+13.79) |
+- Best results are in **bold**
+- Values in _italics_ show relative improvement/decrease from baseline
+- Performance measured in accuracy (%)
 
 ### Visual Results
 
