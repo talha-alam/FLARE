@@ -116,26 +116,128 @@ python scripts/generate_samples.py --prompt "your text prompt" --num_samples 4
 
 ## Results
 
-### Out-of-Domain Performance
+## Out-of-Domain Performance
 
-| Backbone | Method | GalaxyZoo | Space | Spiral | SpaceNet | Average |
-|:---------|:--------|:-----------:|:-------:|:--------:|:---------:|:--------:|
-| **ResNet-50** | Raw_LR | 33.91 | 41.67 | 83.10 | 60.68 | 54.84 |
-| | Raw_Aug_LR | **72.75** <br> _(+38.84)_ | 41.67 <br> _(±0.00)_ | 88.73 <br> _(+5.63)_ | 66.15 <br> _(+5.47)_ | 67.33 <br> _(+12.49)_ |
-| | **FLARE (Ours)** | 71.76 <br> _(-37.25)_ | **59.38** <br> _(+17.71)_ | **95.77** <br> _(+12.67)_ | **83.94** <br> _(+23.26)_ | **77.71** <br> _(+22.87)_ |
-| **GoogleNet** | Raw_LR | 53.88 | 40.62 | 84.51 | 59.55 | 59.64 |
-| | Raw_Aug_LR | **66.46** <br> _(+12.58)_ | 45.83 <br> _(+5.21)_ | 81.69 <br> _(-2.82)_ | 67.18 <br> _(+7.63)_ | 65.29 <br> _(+5.65)_ |
-| | **FLARE (Ours)** | 65.84 <br> _(-11.96)_ | **56.25** <br> _(+15.63)_ | **92.96** <br> _(+8.45)_ | **81.29** <br> _(+21.74)_ | **74.09** <br> _(+14.45)_ |
-| **DenseNet-121** | Raw_LR | 37.73 | 48.96 | 80.28 | 60.27 | 56.81 |
-| | Raw_Aug_LR | **70.16** <br> _(+32.43)_ | 48.96 <br> _(±0.00)_ | 87.32 <br> _(+7.04)_ | 67.39 <br> _(+7.12)_ | 68.46 <br> _(+11.65)_ |
-| | **FLARE (Ours)** | 65.84 <br> _(-28.11)_ | **59.38** <br> _(+10.42)_ | **94.37** <br> _(+14.09)_ | **83.79** <br> _(+23.52)_ | **75.85** <br> _(+22.04)_ |
-| **ViT-B/16** | Raw_LR | 67.20 | 45.83 | 90.14 | 61.92 | 66.27 |
-| | Raw_Aug_LR | **93.09** <br> _(+25.89)_ | 44.79 <br> _(-1.04)_ | 87.32 <br> _(-2.82)_ | 68.21 <br> _(+6.29)_ | 73.35 <br> _(+7.08)_ |
-| | **FLARE (Ours)** | 83.72 <br> _(-16.52)_ | **55.21** <br> _(+9.38)_ | **98.59** <br> _(+8.45)_ | **82.70** <br> _(+20.78)_ | **80.06** <br> _(+13.79)_ |
+<table>
+<thead>
+  <tr>
+    <th align="left">Pretrained<br>Backbone</th>
+    <th align="left">Method</th>
+    <th align="center">GalaxyZoo</th>
+    <th align="center">Space</th>
+    <th align="center">Spiral</th>
+    <th align="center">SpaceNet</th>
+    <th align="center">Average</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td rowspan="3" align="left"><b>ResNet-50</b></td>
+    <td align="left">Raw_LR</td>
+    <td align="center">33.91</td>
+    <td align="center">41.67</td>
+    <td align="center">83.10</td>
+    <td align="center">60.68</td>
+    <td align="center">54.84</td>
+  </tr>
+  <tr>
+    <td align="left">Raw_Aug_LR</td>
+    <td align="center"><b>72.75</b><br><small>(+38.84)</small></td>
+    <td align="center">41.67<br><small>(±0.00)</small></td>
+    <td align="center">88.73<br><small>(+5.63)</small></td>
+    <td align="center">66.15<br><small>(+5.47)</small></td>
+    <td align="center">67.33<br><small>(+12.49)</small></td>
+  </tr>
+  <tr>
+    <td align="left"><b>FLARE (Ours)</b></td>
+    <td align="center">71.76<br><small>(-37.25)</small></td>
+    <td align="center"><b>59.38</b><br><small>(+17.71)</small></td>
+    <td align="center"><b>95.77</b><br><small>(+12.67)</small></td>
+    <td align="center"><b>83.94</b><br><small>(+23.26)</small></td>
+    <td align="center"><b>77.71</b><br><small>(+22.87)</small></td>
+  </tr>
+  <tr><td colspan="7"><hr></td></tr>
+  <tr>
+    <td rowspan="3" align="left"><b>GoogleNet</b></td>
+    <td align="left">Raw_LR</td>
+    <td align="center">53.88</td>
+    <td align="center">40.62</td>
+    <td align="center">84.51</td>
+    <td align="center">59.55</td>
+    <td align="center">59.64</td>
+  </tr>
+  <tr>
+    <td align="left">Raw_Aug_LR</td>
+    <td align="center"><b>66.46</b><br><small>(+12.58)</small></td>
+    <td align="center">45.83<br><small>(+5.21)</small></td>
+    <td align="center">81.69<br><small>(-2.82)</small></td>
+    <td align="center">67.18<br><small>(+7.63)</small></td>
+    <td align="center">65.29<br><small>(+5.65)</small></td>
+  </tr>
+  <tr>
+    <td align="left"><b>FLARE (Ours)</b></td>
+    <td align="center">65.84<br><small>(-11.96)</small></td>
+    <td align="center"><b>56.25</b><br><small>(+15.63)</small></td>
+    <td align="center"><b>92.96</b><br><small>(+8.45)</small></td>
+    <td align="center"><b>81.29</b><br><small>(+21.74)</small></td>
+    <td align="center"><b>74.09</b><br><small>(+14.45)</small></td>
+  </tr>
+  <tr><td colspan="7"><hr></td></tr>
+  <tr>
+    <td rowspan="3" align="left"><b>DenseNet-121</b></td>
+    <td align="left">Raw_LR</td>
+    <td align="center">37.73</td>
+    <td align="center">48.96</td>
+    <td align="center">80.28</td>
+    <td align="center">60.27</td>
+    <td align="center">56.81</td>
+  </tr>
+  <tr>
+    <td align="left">Raw_Aug_LR</td>
+    <td align="center"><b>70.16</b><br><small>(+32.43)</small></td>
+    <td align="center">48.96<br><small>(±0.00)</small></td>
+    <td align="center">87.32<br><small>(+7.04)</small></td>
+    <td align="center">67.39<br><small>(+7.12)</small></td>
+    <td align="center">68.46<br><small>(+11.65)</small></td>
+  </tr>
+  <tr>
+    <td align="left"><b>FLARE (Ours)</b></td>
+    <td align="center">65.84<br><small>(-28.11)</small></td>
+    <td align="center"><b>59.38</b><br><small>(+10.42)</small></td>
+    <td align="center"><b>94.37</b><br><small>(+14.09)</small></td>
+    <td align="center"><b>83.79</b><br><small>(+23.52)</small></td>
+    <td align="center"><b>75.85</b><br><small>(+22.04)</small></td>
+  </tr>
+  <tr><td colspan="7"><hr></td></tr>
+  <tr>
+    <td rowspan="3" align="left"><b>ViT-B/16</b></td>
+    <td align="left">Raw_LR</td>
+    <td align="center">67.20</td>
+    <td align="center">45.83</td>
+    <td align="center">90.14</td>
+    <td align="center">61.92</td>
+    <td align="center">66.27</td>
+  </tr>
+  <tr>
+    <td align="left">Raw_Aug_LR</td>
+    <td align="center"><b>93.09</b><br><small>(+25.89)</small></td>
+    <td align="center">44.79<br><small>(-1.04)</small></td>
+    <td align="center">87.32<br><small>(-2.82)</small></td>
+    <td align="center">68.21<br><small>(+6.29)</small></td>
+    <td align="center">73.35<br><small>(+7.08)</small></td>
+  </tr>
+  <tr>
+    <td align="left"><b>FLARE (Ours)</b></td>
+    <td align="center">83.72<br><small>(-16.52)</small></td>
+    <td align="center"><b>55.21</b><br><small>(+9.38)</small></td>
+    <td align="center"><b>98.59</b><br><small>(+8.45)</small></td>
+    <td align="center"><b>82.70</b><br><small>(+20.78)</small></td>
+    <td align="center"><b>80.06</b><br><small>(+13.79)</small></td>
+  </tr>
+</tbody>
+</table>
 
-- Best results are in **bold**
-- Values in _italics_ show relative improvement/decrease from baseline
-- Performance measured in accuracy (%)
+Quantitative results in terms of **out-of-domain** accuracy across different downstream tasks. This illustrates the generalization of pretrained backbones (i.e., models trained on **SpaceNet** (our) dataset) when tested on the relevant downstream datasets. Best results are in **bold**.
 
 ### Visual Results
 
