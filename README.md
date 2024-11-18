@@ -1,4 +1,4 @@
-# FLARE: Diffusion-based Augmentation Method in Astronomical Imaging
+# FLARE: Diffusion-based Augmentation Method in Astronomical Imaging [BMVC'24]
 
 [![Paper](https://img.shields.io/badge/arXiv-2405.13267-b31b1b.svg)](https://arxiv.org/abs/2405.13267)
 [![Poster](https://img.shields.io/badge/Poster-PDF-orange.svg)](https://mbzuaiac-my.sharepoint.com/:b:/g/personal/mohammed_alam_mbzuai_ac_ae/EQ_RtFNYVhRKvSDt7UhKFwkBAvTlRSl327rk_BoCPWUKYQ?e=Zdf4h9)
@@ -61,8 +61,7 @@ wget https://github.com/username/FLARE/releases/download/v1.0/swinir_spacenet.pt
 wget https://github.com/username/FLARE/releases/download/v1.0/unidiffuser_spacenet.pth
 wget https://github.com/username/FLARE/releases/download/v1.0/resnet50_fine.pth
 wget https://github.com/username/FLARE/releases/download/v1.0/resnet50_macro.pth -->
-```
-
+<!-- ``` -->
 ## Installation
 
 ```bash
