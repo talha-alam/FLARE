@@ -1,4 +1,4 @@
-# FLARE: Diffusion-based Augmentation Method in Astronomical Imaging [BMVC'24]
+# FLARE up your data: Diffusion-based Augmentation Method in Astronomical Imaging [BMVC'24]
 
 [![Paper](https://img.shields.io/badge/arXiv-2405.13267-b31b1b.svg)](https://arxiv.org/abs/2405.13267)
 [![Dataset](https://img.shields.io/badge/Dataset-SpaceNet-blue.svg)](https://www.kaggle.com/datasets/razaimam45/spacenet-an-optimally-distributed-astronomy-data/)
