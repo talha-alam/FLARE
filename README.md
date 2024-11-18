@@ -1,5 +1,7 @@
 # FLARE up your data: Diffusion-based Augmentation Method in Astronomical Imaging [BMVC'24]
 
+[Mohammed Talha Alam](https://scholar.google.com/citations?user=CfJ2E0EAAAAJ&hl=en), [Raza Imam](https://razaimam45.github.io/), [Mohsen Guizani](https://scholar.google.com/citations?user=RigrYkcAAAAJ&hl=en), and [Fakhri Karray](https://uwaterloo.ca/scholar/karray)
+
 [![Paper](https://img.shields.io/badge/arXiv-2405.13267-b31b1b.svg)](https://arxiv.org/abs/2405.13267)
 [![Dataset](https://img.shields.io/badge/Dataset-SpaceNet-blue.svg)](https://www.kaggle.com/datasets/razaimam45/spacenet-an-optimally-distributed-astronomy-data/)
 [![Poster](https://img.shields.io/badge/Poster-PDF-orange.svg)](https://mbzuaiac-my.sharepoint.com/:b:/g/personal/mohammed_alam_mbzuai_ac_ae/EQ_RtFNYVhRKvSDt7UhKFwkBAvTlRSl327rk_BoCPWUKYQ?e=Zdf4h9)
